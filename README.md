@@ -47,3 +47,9 @@ this error was from line  `rfImp1 = rfImp1[ order(-rfImp1), , drop=FALSE ]`
 
 to solve this I specifed the columns like this `rfImp1 <- rfImp1[order(-rfImp1$column_name), , drop = FALSE]`
 
+# github not displaying commits
+
+the solution to this is simple juuust check the user.email in your git configurations on your pc. ensure it macthes with the one online when you try to push from githumb online webite.
+
+thank you
+
