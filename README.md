@@ -53,3 +53,24 @@ the solution to this is simple juuust check the user.email in your git configura
 
 thank you
 
+for linux users in R when you get ths error message install the libcurl packaghes
+-------------------------- [ERROR MESSAGE] ---------------------------
+<stdin>:1:10: fatal error: curl/curl.h: No such file or directory
+compilation terminated.
+--------------------------------------------------------------------
+ERROR: configuration failed for package ‘curl’
+* removing ‘/home/dragon/R/x86_64-pc-linux-gnu-library/4.3/curl’
+Warning in install.packages :
+  installation of package ‘curl’ had non-zero exit status
+ERROR: dependency ‘curl’ is not available for package ‘httr’
+* removing ‘/home/dragon/R/x86_64-pc-linux-gnu-library/4.3/httr’
+Warning in install.packages :
+  installation of package ‘httr’ had non-zero exit status
+
+The downloaded source packages are in
+	‘/tmp/RtmpjfQ2Pm/downloaded_packages’
+
+sudo apt-get update
+sudo apt-get install libcurl4-openssl-dev
+
+thanks you if this worked for you
