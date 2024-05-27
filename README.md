@@ -74,3 +74,34 @@ sudo apt-get update
 sudo apt-get install libcurl4-openssl-dev
 
 thanks you if this worked for you
+
+# if you get this error solve it like this  
+Defaulting to user installation because normal site-packages is not writeable
+Collecting pytorch
+  Using cached pytorch-1.0.2.tar.gz (689 bytes)
+  Preparing metadata (setup.py) ... Building wheels for collected packages: pytorch
+  Building wheel for pytorch (setup.py) ... error: subprocess-exited-with-error
+  
+  × python setup.py bdist_wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [6 lines of output]
+      Traceback (most recent call last):
+        File "<string>", line 2, in <module>
+        File "<pip-setuptools-caller>", line 34, in <module>
+        File "/tmp/pip-install-v9l0hf52/pytorch_1558fa418bad42be841b8584a41a5ff2/setup.py", line 15, in <module>
+          raise Exception(message)
+      Exception: You tried to install "pytorch". The package named for PyTorch is "torch"
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for pytorch
+  Running setup.py clean for pytorch
+Failed to build pytorch
+ERROR: Could not build wheels for pytorch, which is required to install pyproject.toml-based projects
+Note: you may need to restart the kernel to use updated packages.
+
+
+## run  
+*pip install torch and pip install torch torchvision and  pip install --user torch torchvision *
+
+run them one by one thank you.
