@@ -401,3 +401,66 @@ Here's how you can resolve this issue:
 
 These steps should help you resolve the installation issue for the `Rsymphony` package. Let me know if you need further assistance!
 
+
+## ERROR
+
+-----------
+Warning in install.packages :
+  installation of package ‘Rglpk’ had non-zero exit status
+ERROR: dependency ‘Rglpk’ is not available for package ‘ROI.plugin.glpk’
+* removing ‘/home/dragon/R/x86_64-pc-linux-gnu-library/4.4/ROI.plugin.glpk’
+Warning in install.packages :
+  installation of package ‘ROI.plugin.glpk’ had non-zero exit status
+--------------
+
+The error you're encountering suggests that the `Rglpk` package, a dependency for `ROI.plugin.glpk`, is not available or failed to install. `Rglpk` is an R interface to the GNU Linear Programming Kit (GLPK), which also needs to be installed on your system.
+
+Here are steps to resolve this issue:
+
+1. **Install GLPK Library:**
+
+   You need to install the GLPK library on your system.
+
+   **For Ubuntu/Debian:**
+   ```bash
+   sudo apt-get update
+   sudo apt-get install libglpk-dev
+   ```
+
+   **For Fedora:**
+   ```bash
+   sudo dnf install glpk-devel
+   ```
+
+   **For macOS (using Homebrew):**
+   ```bash
+   brew install glpk
+   ```
+
+2. **Install Rglpk:**
+
+   After installing the GLPK library, try installing the `Rglpk` package again in R:
+   ```R
+   install.packages("Rglpk")
+   ```
+
+3. **Alternative Installation via `remotes`:**
+
+   Sometimes using the `remotes` package to install from GitHub can resolve issues:
+   ```R
+   if (!requireNamespace("remotes", quietly = TRUE)) {
+     install.packages("remotes")
+   }
+   remotes::install_github("cran/Rglpk")
+   ```
+
+4. **Install ROI.plugin.glpk:**
+
+   Once `Rglpk` is successfully installed, you can proceed with the installation of `ROI.plugin.glpk`:
+   ```R
+   install.packages("ROI.plugin.glpk")
+   ```
+
+These steps should help resolve the installation issues with `Rglpk` and `ROI.plugin.glpk`. Let me know if you encounter any further problems!
+
+
