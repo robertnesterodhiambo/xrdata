@@ -331,3 +331,73 @@ By following these steps, you should be able to resolve the issue with missing f
 
 
 run them one by one thank you.
+
+## Error 
+-----------------------
+Cannot find SYMPHONY libraries and headers.
+See <https://projects.coin-or.org/SYMPHONY>.
+ERROR: configuration failed for package ‘Rsymphony’
+* removing ‘/home/dragon/R/x86_64-pc-linux-gnu-library/4.4/Rsymphony’
+Warning in install.packages :
+  installation of package ‘Rsymphony’ had non-zero exit status
+* installing *source* package ‘PerformanceAnalytics’ ...
+** package ‘PerformanceAnalytics’ successfully unpacked and MD5 sums checked
+** using staged installation
+---------------
+
+## Solution 
+The error you're encountering indicates that the `Rsymphony` package could not be installed because it requires the SYMPHONY libraries and headers, which are not found on your system. SYMPHONY is a software library for solving mixed-integer linear programs.
+
+Here's how you can resolve this issue:
+
+1. **Install SYMPHONY Libraries:**
+
+   You need to install the SYMPHONY libraries on your system. This process will vary depending on your operating system.
+
+   **For Ubuntu/Debian:**
+   ```bash
+   sudo apt-get update
+   sudo apt-get install coinor-libcoinutils-dev coinor-libosi-dev coinor-libclp-dev coinor-libcgl-dev coinor-libcbc-dev coinor-libsymphony-dev
+   ```
+
+   **For Fedora:**
+   ```bash
+   sudo dnf install coin-or-SYMPHONY-devel
+   ```
+
+   **For macOS (using Homebrew):**
+   ```bash
+   brew tap coin-or-tools/coinor
+   brew install symphony
+   ```
+
+2. **Verify Installation:**
+
+   After installing the necessary libraries, verify the installation:
+   ```bash
+   symphony -h
+   ```
+
+3. **Install Rsymphony:**
+
+   Once the libraries are installed, you can try installing the `Rsymphony` package again in R:
+   ```R
+   install.packages("Rsymphony")
+   ```
+
+4. **Alternative Installation via `remotes`:**
+
+   Sometimes using the `remotes` package to install from GitHub can resolve issues:
+   ```R
+   if (!requireNamespace("remotes", quietly = TRUE)) {
+     install.packages("remotes")
+   }
+   remotes::install_github("cran/Rsymphony")
+   ```
+
+5. **Checking for Errors:**
+
+   If you still encounter issues, ensure that the R and SYMPHONY installations are in compatible paths and that your environment variables are set correctly.
+
+These steps should help you resolve the installation issue for the `Rsymphony` package. Let me know if you need further assistance!
+
