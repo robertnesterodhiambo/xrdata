@@ -1,0 +1,21 @@
+(Start) 
+   | 
+[Input: Enter first integer]
+   |
+[Input: Enter second integer]
+   |
+[Decision: Is integer1 > integer2?]
+  /      \
+Yes       No
+/          \
+[Print:      [Decision: Is integer2 > integer1?]
+integer1 +    /       \
+" is larger"] Yes       No
+              /          \
+          [Print:          [Print: "These numbers are equal."]
+          integer2 + 
+          " is larger"]
+               |
+              (Merge here)
+   |
+(End)

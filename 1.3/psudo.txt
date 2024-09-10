@@ -1,0 +1,40 @@
+# Arithmetic
+
+BEGIN
+    PROMPT user to "Enter the first integer:"
+    READ integer1
+
+    PROMPT user to "Enter the second integer:"
+    READ integer2
+
+    SET sum = integer1 + integer2
+    SET product = integer1 * integer2
+    SET difference = integer1 - integer2
+    SET quotient = integer1 / integer2 (assuming integer division)
+
+    PRINT "Sum is: " + sum
+    PRINT "Product is: " + product
+    PRINT "Difference is: " + difference
+    IF integer2 is not 0 THEN
+        PRINT "Quotient is: " + quotient
+    ELSE
+        PRINT "Cannot divide by zero."
+END
+
+
+
+# Coparing
+BEGIN
+    PROMPT user to "Enter the first integer:"
+    READ integer1
+
+    PROMPT user to "Enter the second integer:"
+    READ integer2
+
+    IF integer1 > integer2 THEN
+        PRINT integer1 + " is larger."
+    ELSE IF integer2 > integer1 THEN
+        PRINT integer2 + " is larger."
+    ELSE
+        PRINT "These numbers are equal."
+END

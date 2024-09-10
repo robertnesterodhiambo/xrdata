@@ -1,0 +1,25 @@
+(Start) 
+   | 
+[Input: Enter first integer]
+   |
+[Input: Enter second integer]
+   |
+[Calculate sum = integer1 + integer2]
+   |
+[Calculate product = integer1 * integer2]
+   |
+[Calculate difference = integer1 - integer2]
+   |
+[Decision: Is integer2 == 0?]
+  /    \
+ Yes     No
+/         \
+[Print: "Cannot   [Calculate quotient = integer1 / integer2]
+ divide by zero"]   |
+ \               [Print quotient]
+  \               /
+  (Merge here)
+   |
+[Print: sum, product, difference]
+   |
+(End)
